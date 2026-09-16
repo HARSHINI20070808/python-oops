@@ -1,0 +1,33 @@
+class person:
+  def introduce(self):
+    print(f"My name is {self.name}\nI am {self.age} years old")
+def activity(self):
+  pass
+  
+class student(person):
+  def __init__(self,name,age,course,marks):
+    self.name=name
+    self.age=age
+    self.course=course
+    self.__marks=marks
+  def show_details(self):
+    print(f"My name is {self.name}\nI am {self.age} years old\nI am studying {self.course} in my university")
+  def show_marks(self):
+    print(f"I scored {self.__marks} in python")
+  def activity(self):
+    print("i am studying") 
+class children:
+  def teach(self):
+    print("children are teaching their friends") 
+class teacher:
+  def teach(self):
+    print("Teacher is teaching the students")       
+student1=student("Harshini",19,"python",100)
+student1.show_details()
+student1.show_marks()
+student1.introduce()
+children1=children()
+teacher1=teacher()
+children1.teach()
+teacher1.teach()
+student1.activity()
