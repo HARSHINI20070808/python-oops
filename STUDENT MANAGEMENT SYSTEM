@@ -1,1 +1,41 @@
+class person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def introduce(self):
+        print(f"INDRODUCTION OF STUDENT'S:\nMy name is {self.name}\nMY age is {self.age}") 
+class teacher(person):
+    def __init__(self,name,subject,college_name): 
+        self.name=name
+        self.subject=subject
+        self.college_name=college_name
+    def show_teacher(self):
+        print(f"Name of the teacher:{self.name}\nSubject of the teacher:{self.subject}\nName of college:{self.college_name}")      
+
+
+class student(person):
+    def __init__(self,name,age,course,marks,college_name):
+        super().__init__(name,age)
+        self.course=course
+        self.__marks=marks
+        self.college_name=college_name
+    def show_details(self):
+        print(f"NAME OF THE STUDNET:{self.name}\nAGE OF THE STUDENT:{self.age}\nCOURSE:{self.course}\nCollege name:{self.college_name}")
+    def show_marks(self):
+        print(f"STUDENT'S MARKS:{self.__marks}")
+  
+               
+
+student1=student("Harshini",19,"python",100,"REVA")
+student2=student("rani",18,"sql",99,"SJU")
+teacher1=teacher("ravi","computer","REVA")
+teacher2=teacher("raj","logical thinking","SJU")
+student1.show_details()
+student1.show_marks()
+student2.show_details()
+student2.show_marks()
+student1.introduce()
+student2.introduce()
+teacher1.show_teacher()
+teacher2.show_teacher()
 
