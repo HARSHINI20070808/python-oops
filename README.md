@@ -1,4 +1,4 @@
-      ### Hi coders! 👋 I'm a first-year student taking my first steps into the tech world. 
+      Hi coders! 👋 I'm a first-year student taking my first step into the tech world. 
 
 
 ##  🚀 Python OOPS project
