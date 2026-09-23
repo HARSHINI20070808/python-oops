@@ -1,1 +1,54 @@
+class product:
+    def __init__(self,name,price):
+        self.name=name
+        self.price=price
+        
+    def show_details(self):
+        print(f"name of product:{self.name}\nprice of product:{self.price}") 
+class digital_product(product):
+    def __init__(self,name,price,file_size):
+        super().__init__(name,price)
+        self.file_size=file_size
+    def show_details(self):
+        print(f"File_size:{self.file_size}")    
+class physical_product(product):
+    def __init__(self,name,price,weight):
+        super().__init__(name,price)
+        self.weight=weight     
+    def show_weight(self):
+        print(f"Weight of product:{self.weight}")
+class shopping_cart:
+    def __init__(self):
+        self.products=[]
+    def add_products(self,product):
+        self.products.append(product)
+    def show_cart(self):
+        for product in self.products:
+            print(f"Items in cart:{product.name}") 
+class credit_payment:
+    def process_pay(self):
+        print("Payment done using credit card")
+class phone_pay:
+    def process_pay(self):
+        print("Payment done using phone pay")                   
 
+product1=product("biscuit",20)  
+product1.show_details()
+digital_product1=digital_product("python course",200,"2 GB")
+digital_product1.show_details()
+physical_product1=physical_product("sql",344,"2 KG")
+physical_product1.show_weight()
+shopping_cart1=shopping_cart()
+shopping_cart1.add_products(product1) 
+shopping_cart1.add_products(digital_product1)
+shopping_cart1.add_products(physical_product1)     
+shopping_cart1.show_cart()
+credit_payment1=credit_payment()
+phone_pay1=phone_pay()
+choice=int(input("enter the choice"))
+if choice==1:
+    phone_pay1.process_pay()
+elif choice==2:
+    credit_payment1.process_pay()
+else:
+    print("Invalid choice")        
