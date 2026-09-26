@@ -1,1 +1,48 @@
+class card:
+    def __init__(self,rank,suit):
+        self.rank=rank
+        self.suit=suit
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"    
+class deck:
+    def __init__(self):
+        self.card=[]
+        ranks=["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+        suits=["Hearts","Diamond","clubs","spades"]  
+        for rank in ranks:
+            for suit in suits:
+                self.card.append(card(rank,suit))
+    def __len__(self):
+        return len(self.card)            
+    def draw(self):
+        return self.card.pop()
+class player:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+        self.card=[] 
+persons=["harshini","rani","jananai","cooper","ram"]
+ages=["18","18","19","30","20"]
+players=[]
+age_person=[]
+for person,age in zip(persons,ages):
+    p=player(person,age)
+    players.append(p)
+            
 
+
+
+
+deck1=deck()
+deck1.draw()
+
+print(f"length of card list:{len(deck1.card)}")
+print(f"Draw of one card:{deck1.draw()}")
+
+for card in deck1.card:
+    print(card) 
+for p in players:
+    for  card in deck1.card[:2]:
+        taken_card=deck1.draw()
+        p.card.append(taken_card)
+        print(f"{p.name} has taken {taken_card}")
